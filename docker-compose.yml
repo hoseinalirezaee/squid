@@ -1,0 +1,11 @@
+version: "3.8"
+
+services: 
+    squid:
+        container_name: "squid"
+        build: .
+        image: "squid"
+        network_mode: "host"
+        volumes: 
+            - ./config:/etc/squid/
+        restart: unless-stopped
